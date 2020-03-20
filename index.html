@@ -1,0 +1,31 @@
+<!-- Exercise 1
+
+    Fast Food app (Frontend)
+    Create an html text input box, our customers are going to put their orders in here. Their orders are going to look like: " french fries: 1, shakes: 3"
+    Add an order button. When we click this button it will send our order to the kitchen.
+    Attach a Javascript event listener to the order button and listen for the click event. We are going to need to query the order button and then attach the event listener to it.
+    In the listener take the customer's order and save it to a variable named customerOrder. log the customer's order to the console.
+    Clear the contents in the input box. We want to free it up for the next customer's order
+    Bonus Make a string with the customer's order in it and repeat back to the customer what they ordered. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="foodApp.js"></script> 
+    <link rel="stylesheet" type="text/css" href="homePage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userInput" placeholder="Ex. food:amount">
+    <br>
+    <button onclick="addOrder()" id="submitOrder">Add To Order</button>
+    <br>
+    <button onclick="sendToCook()" id="reset">Send To Cook</button>
+    <br>
+    <button onclick="showMenu()" id="menu">Show Menu</button>
+</body>
+</html>
