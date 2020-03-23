@@ -56,24 +56,52 @@ let menu = {
     fish: 10,
 };
 
+
+
+
+//trying to keep array and trim but keeps splitting up array instead. moving ahead for now.
+// function addOrder(){
+//     let order = document.getElementById("userInput").value;
+//     let customerOrder = order.trim().split(",");
+//     for(i = 0; i < customerOrder.length; i++){
+//         let ticket = customerOrder[i].trim().split(":");
+//         for(j = 0; j < ticket.length; j++){
+//             kitchen.push(ticket[j].trim());
+//             console.log(kitchen[kitchen.length -1]);
+//         }
+//     }
+//     document.getElementById("userInput").value='';
+// }
+
+
+
+
 function addOrder(){
     let order = document.getElementById("userInput").value;
     let customerOrder = order.trim().split(",");
     for(i = 0; i < customerOrder.length; i++){
         let ticket = customerOrder[i].trim().split(":");
         kitchen.push(ticket);
-        console.log(kitchen[kitchen.length - 1]);
+        for(j = 0; j < ticket.length; j++){
+            let receipt = ticket[j].trim();
+            console.log(receipt);
+            for(items in menu){
+                // let items = ticket[j];
+                // if(menu.hasOwnProperty(items)){
+                //     console.log("It will be right out!")
+                // } else {
+                //     console.log("We do not make that.")
+                // }
+            }
         }
-    //for(items in kitchen){
-        // if(menu.hasOwnProperty(items)){
-        //     console.log(items);
-        // } else {
-        //     console.log("Please Re-Enter Order, Our Machines Can't Make That.")
-        //}
-    //}
+    }
     document.getElementById("userInput").value='';
 }
 
+
+
+
+//function to clear kitchen array and present what the customer has ordered
 function sendToCook(){
     alert(kitchen);
     while(kitchen.length > 0){
@@ -81,6 +109,11 @@ function sendToCook(){
     }
 }
 
+
+
+
+
+//function to show menu object
 function showMenu(){
     alert(JSON.stringify(menu));
 }
